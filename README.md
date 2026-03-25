@@ -1,33 +1,67 @@
 # 🏦 Bank Transaction Analysis using Clustering & Classification
 
-## 📌 Overview
+## 📌 Project Overview
 
-Proyek ini bertujuan untuk menganalisis perilaku transaksi nasabah menggunakan kombinasi **unsupervised learning (clustering)** dan **supervised learning (classification)**.
+This project is part of my final submission for the **Dicoding Machine Learning Path**.
+It demonstrates an end-to-end machine learning workflow by combining:
 
-Pendekatan:
+* **Unsupervised Learning (Clustering)** → to generate labels
+* **Supervised Learning (Classification)** → to predict those labels
 
-* Clustering → membentuk segmen nasabah
-* Classification → memprediksi segmen tersebut
+🔗 **Certificate:** https://www.dicoding.com/certificates/07Z67V952PQR
 
 ---
 
 ## 🎯 Objectives
 
-* Mengelompokkan nasabah berdasarkan pola transaksi
-* Menginterpretasikan karakteristik setiap cluster
-* Membangun model klasifikasi untuk memprediksi cluster
+* Perform customer segmentation based on transaction behavior
+* Interpret each cluster into meaningful business insights
+* Build classification models to predict customer segments
 
 ---
 
-## 🧠 Methods
+## 📊 Dataset
 
-### 1. Clustering (Unsupervised Learning)
+The dataset represents **bank transaction activity** including:
 
-* Algorithm: K-Means
-* Evaluation: Elbow Method + Silhouette Score
-* Dimensionality Reduction: PCA
+* Transaction amount
+* Customer age
+* Transaction duration
+* Account balance
+* Transaction channel & location
+* Customer occupation
 
-### 2. Classification (Supervised Learning)
+Dataset is adapted from:
+
+> Bank Transaction Dataset for Fraud Detection (modified by Dicoding)
+
+---
+
+## ⚙️ Methodology
+
+### 1. Data Preprocessing
+
+* Handling missing values & duplicates
+* Dropping ID, IP, and date-related columns
+* Label Encoding for categorical features
+* Outlier removal using IQR
+* Feature scaling using StandardScaler
+* Feature engineering (AgeGroup binning)
+
+---
+
+### 2. Clustering (Unsupervised Learning)
+
+* Algorithm: **K-Means**
+* Optimal cluster selection: **Elbow Method (Silhouette)**
+* Silhouette Score: **0.57**
+* PCA used for visualization
+
+---
+
+### 3. Classification (Supervised Learning)
+
+Models used:
 
 * Decision Tree
 * Random Forest
@@ -35,52 +69,75 @@ Pendekatan:
 
 ---
 
-## 📊 Key Results
+## 📈 Results
 
 ### Clustering
 
-* Optimal cluster: 2
-* Silhouette Score: 0.57
+* Optimal cluster: **2**
+* Silhouette Score: **0.572**
 
-### Classification
+### Classification Performance
 
-* Accuracy: 100%
-* Precision: 100%
-* Recall: 100%
-* F1-score: 100%
+All models achieved:
 
----
-
-## 👥 Customer Segmentation Insight
-
-### Cluster 1 – Active Users
-
-* Lebih sering bertransaksi
-* Durasi transaksi lebih cepat
-* Saldo relatif lebih rendah
-  ➡️ Cocok untuk promo & loyalty program
-
-### Cluster 2 – Conservative Users
-
-* Transaksi lebih stabil
-* Saldo lebih tinggi
-* Cenderung berhati-hati
-  ➡️ Cocok untuk produk investasi & deposito
+* Accuracy: **100%**
+* Precision: **100%**
+* Recall: **100%**
+* F1-score: **100%**
 
 ---
 
-## 🛠️ Tech Stack
+## 👥 Customer Segmentation Insights
 
-* Python
-* Pandas, NumPy
-* Scikit-learn
-* Matplotlib, Seaborn
+### 🔹 Cluster 0 — Conservative Customers
+
+* Slightly older customers
+* Higher account balance
+* Slower transaction duration
+* Lower transaction activity
+
+📌 Insight:
+Suitable for **investment products, deposits, and low-risk financial services**
+
+---
+
+### 🔹 Cluster 1 — Active Customers
+
+* Slightly younger customers
+* Faster transactions
+* More active usage behavior
+* Slightly lower account balance
+
+📌 Insight:
+Potential targets for **cashback, promotions, and digital banking engagement**
+
+---
+
+## 🧠 Key Takeaways
+
+* Combining clustering and classification enables **label generation + prediction**
+* Customer segmentation can directly support **business decision-making**
+* Even simple models can perform extremely well with proper preprocessing
 
 ---
 
 ## 📂 Project Structure
 
-(Lihat folder structure di atas)
+```
+.
+├── notebooks/
+│   ├── clustering.ipynb
+│   └── classification.ipynb
+├── models/
+│   ├── model_clustering.h5
+│   ├── decision_tree_model.h5
+│   ├── explore_randomforest_classification.h5
+│   └── tuning_classification.h5
+├── data/
+│   ├── data_clustering.csv
+│   └── data_clustering_inverse.csv
+├── README.md
+```
 
 ---
 
@@ -90,10 +147,15 @@ Pendekatan:
 pip install -r requirements.txt
 ```
 
-Jalankan notebook atau Streamlit app (opsional).
+Run notebooks in order:
+
+1. Clustering
+2. Classification
 
 ---
 
 ## ✨ Author
 
-Muh. Rinaldi Ruslan
+**Muh. Rinaldi Ruslan**
+Information Systems Student
+Hasanuddin University
