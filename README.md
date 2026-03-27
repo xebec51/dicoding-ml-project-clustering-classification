@@ -1,84 +1,121 @@
-# 🏦 Bank Transaction Analysis using Clustering & Classification
+# **Customer Segmentation & Classification (Machine Learning Project)**
 
-## 📌 Project Overview
-
-This project is part of my final submission for the **Dicoding Machine Learning Path**.
-It demonstrates an end-to-end machine learning workflow by combining:
-
-* **Unsupervised Learning (Clustering)** → to generate labels
-* **Supervised Learning (Classification)** → to predict those labels
-
-🔗 **Certificate:** https://www.dicoding.com/certificates/07Z67V952PQR
-
----
-
-## 🎯 Objectives
-
-* Perform customer segmentation based on transaction behavior
-* Interpret each cluster into meaningful business insights
-* Build classification models to predict customer segments
-
----
-
-## 📊 Dataset
-
-The dataset represents **bank transaction activity** including:
-
-* Transaction amount
-* Customer age
-* Transaction duration
-* Account balance
-* Transaction channel & location
-* Customer occupation
-
-Dataset is adapted from:
-
-> Bank Transaction Dataset for Fraud Detection (modified by Dicoding)
+<p align="center">
+  <a href="https://github.com/xebec51">
+    <img src="https://img.shields.io/badge/GitHub-xebec51-blue?logo=github" />
+  </a>
+  <a href="https://www.instagram.com/rinaldiruslan/">
+    <img src="https://img.shields.io/badge/Instagram-rinaldiruslan-E4405F?logo=instagram" />
+  </a>
+  <a href="https://www.tiktok.com/@rinaldiruslan">
+    <img src="https://img.shields.io/badge/TikTok-rinaldiruslan-000000?logo=tiktok&logoColor=white" />
+  </a>
+  <br/>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
+  </a>
+  <img src="https://img.shields.io/badge/Machine%20Learning-Clustering%20%26%20Classification-orange" />
+</p>
 
 ---
 
-## ⚙️ Methodology
+🌐 **Final Submission dari Kelas**:
+[Belajar Machine Learning untuk Pemula - Dicoding](https://www.dicoding.com/academies/184)
 
-### 1. Data Preprocessing
+🎓 **Sertifikat**:
+https://www.dicoding.com/certificates/07Z67V952PQR
+
+---
+
+## **📌 Deskripsi Proyek**
+
+Proyek ini merupakan implementasi **end-to-end machine learning pipeline** yang menggabungkan:
+
+* **Unsupervised Learning (Clustering)** untuk membentuk label data
+* **Supervised Learning (Classification)** untuk memprediksi label tersebut
+
+Dataset yang digunakan merepresentasikan **aktivitas transaksi perbankan**, sehingga proyek ini relevan untuk:
+
+* Customer segmentation
+* Behavioral analysis
+* Fraud/anomaly exploration
+
+---
+
+## 🚀 **Key Highlights**
+
+* ✅ End-to-end ML pipeline (Clustering → Classification)
+* ✅ Feature engineering & preprocessing lengkap
+* ✅ Visualisasi clustering menggunakan PCA
+* ✅ Silhouette Score sebagai evaluasi clustering
+* ✅ Multiple classification models + hyperparameter tuning
+* ✅ Interpretasi bisnis dari hasil clustering
+
+---
+
+## 📊 **Dataset Overview**
+
+Dataset mencakup berbagai fitur penting seperti:
+
+* Transaction Amount
+* Customer Age
+* Transaction Duration
+* Account Balance
+* Transaction Channel & Location
+* Customer Occupation
+
+Dataset telah melalui proses:
+
+* Data cleaning
+* Encoding
+* Scaling
+* Outlier handling
+
+---
+
+## ⚙️ **Metodologi**
+
+### **1. Data Preprocessing**
 
 * Handling missing values & duplicates
-* Dropping ID, IP, and date-related columns
-* Label Encoding for categorical features
-* Outlier removal using IQR
-* Feature scaling using StandardScaler
+* Drop fitur ID, IP Address, dan Date
+* Label Encoding untuk fitur kategorikal
+* Outlier removal menggunakan IQR
+* Feature scaling dengan StandardScaler
 * Feature engineering (AgeGroup binning)
 
 ---
 
-### 2. Clustering (Unsupervised Learning)
+### **2. Clustering (Unsupervised Learning)**
 
-* Algorithm: **K-Means**
-* Optimal cluster selection: **Elbow Method (Silhouette)**
+* Algoritma: **K-Means**
+* Penentuan cluster: **Elbow Method + Silhouette Score**
+* Jumlah cluster optimal: **2**
 * Silhouette Score: **0.57**
-* PCA used for visualization
+* Visualisasi menggunakan **PCA**
 
 ---
 
-### 3. Classification (Supervised Learning)
+### **3. Classification (Supervised Learning)**
 
-Models used:
+Model yang digunakan:
 
 * Decision Tree
 * Random Forest
-* Hyperparameter Tuning (GridSearchCV)
+* Hyperparameter tuning (GridSearchCV)
 
 ---
 
-## 📈 Results
+## 📈 **Hasil Model**
 
-### Clustering
+### 🔹 Clustering
 
-* Optimal cluster: **2**
+* Jumlah cluster: **2**
 * Silhouette Score: **0.572**
 
-### Classification Performance
+### 🔹 Classification
 
-All models achieved:
+Semua model menghasilkan performa:
 
 * Accuracy: **100%**
 * Precision: **100%**
@@ -87,75 +124,119 @@ All models achieved:
 
 ---
 
-## 👥 Customer Segmentation Insights
+## 👥 **Insight Segmentasi Nasabah**
 
-### 🔹 Cluster 0 — Conservative Customers
+### 🔹 Cluster 0 — Nasabah Stabil & Konservatif
 
-* Slightly older customers
-* Higher account balance
-* Slower transaction duration
-* Lower transaction activity
+* Usia sedikit lebih tua
+* Saldo lebih tinggi
+* Durasi transaksi lebih lama
+* Aktivitas transaksi lebih rendah
 
-📌 Insight:
-Suitable for **investment products, deposits, and low-risk financial services**
+📌 **Rekomendasi:**
+Cocok untuk produk:
 
----
-
-### 🔹 Cluster 1 — Active Customers
-
-* Slightly younger customers
-* Faster transactions
-* More active usage behavior
-* Slightly lower account balance
-
-📌 Insight:
-Potential targets for **cashback, promotions, and digital banking engagement**
+* Deposito
+* Tabungan berjangka
+* Investasi risiko rendah
 
 ---
 
-## 🧠 Key Takeaways
+### 🔹 Cluster 1 — Nasabah Aktif & Digital
 
-* Combining clustering and classification enables **label generation + prediction**
-* Customer segmentation can directly support **business decision-making**
-* Even simple models can perform extremely well with proper preprocessing
+* Usia lebih muda
+* Transaksi lebih cepat
+* Aktivitas lebih tinggi
+* Saldo relatif lebih rendah
+
+📌 **Rekomendasi:**
+Cocok untuk:
+
+* Promo digital banking
+* Cashback transaksi
+* Loyalty program
 
 ---
 
-## 📂 Project Structure
+## 📂 **Struktur Proyek**
 
-```
+```bash
 .
-├── notebooks/
-│   ├── clustering.ipynb
-│   └── classification.ipynb
-├── models/
-│   ├── model_clustering.h5
-│   ├── decision_tree_model.h5
-│   ├── explore_randomforest_classification.h5
-│   └── tuning_classification.h5
-├── data/
-│   ├── data_clustering.csv
-│   └── data_clustering_inverse.csv
+├── [Clustering]_Submission_Akhir_BMLP.ipynb
+├── [Klasifikasi]_Submission_Akhir_BMLP.ipynb
+├── model_clustering.h5
+├── PCA_model_clustering.h5
+├── decision_tree_model.h5
+├── explore_randomforest_classification.h5
+├── tuning_classification.h5
+├── data_clustering.csv
+├── data_clustering_inverse.csv
 ├── README.md
 ```
 
 ---
 
-## 🚀 How to Run
+## ▶️ **Cara Menjalankan**
+
+### **Prasyarat**
+
+* Python 3.x
+* Jupyter Notebook / Google Colab
+
+### **Langkah**
+
+1. Clone repository:
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/xebec51/<nama-repo-anda>.git
 ```
 
-Run notebooks in order:
+2. Masuk ke folder:
 
-1. Clustering
-2. Classification
+```bash
+cd <nama-repo-anda>
+```
+
+3. Jalankan notebook secara berurutan:
+
+* Clustering
+* Klasifikasi
 
 ---
 
-## ✨ Author
+## 🧠 **Insight Utama**
+
+* Clustering dapat digunakan untuk **membuat label dari data tanpa label**
+* Classification dapat memanfaatkan hasil tersebut untuk **prediksi otomatis**
+* Kombinasi ini sangat powerful dalam kasus nyata seperti:
+
+  * Customer segmentation
+  * Fraud detection
+  * Behavioral analytics
+
+---
+
+## 🛠️ **Teknologi yang Digunakan**
+
+* **Python**
+* **Pandas & NumPy**
+* **Scikit-learn**
+* **Seaborn & Matplotlib**
+* **Yellowbrick**
+
+---
+
+## 👤 **Author**
 
 **Muh. Rinaldi Ruslan**
-Information Systems Student
-Hasanuddin University
+
+* 📧 Email: [rinaldi.ruslan51@gmail.com](mailto:rinaldi.ruslan51@gmail.com)
+* 💻 GitHub: https://github.com/xebec51
+* 📸 Instagram: https://www.instagram.com/rinaldiruslan/
+* 🎵 TikTok: https://www.tiktok.com/@rinaldiruslan
+
+---
+
+## 📄 **Lisensi**
+
+Proyek ini dilisensikan di bawah **MIT License**.
