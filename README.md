@@ -1,4 +1,4 @@
-# **Customer Segmentation & Classification (Machine Learning Project)**
+# **🏦 Bank Transaction Analysis using Clustering & Classification**
 
 <p align="center">
   <a href="https://github.com/xebec51">
